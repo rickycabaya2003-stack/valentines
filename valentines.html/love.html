@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff4e50,#ff758c,#ff7eb3);
+    position:relative;
+}
+/* Background Glow */
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,rgba(255,255,255,0.4),transparent 70%);
+    filter:blur(120px);
+    animation:move 12s infinite alternate ease-in-out;
+}
+@keyframes move{
+    from{transform:translate(-150px,-100px);}
+    to{transform:translate(150px,100px);}
+}
+/* Main Card */
+.container{
+    position:relative;
+    padding:60px 40px;
+    width:95%;
+    max-width:700px;
+    border-radius:30px;
+    backdrop-filter:blur(25px);
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    text-align:center;
+    color:white;
+    z-index:2;
+}
+/* Main Photo */
+.photo-frame{
+    width:180px;
+    height:180px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    padding:8px;
+    background:linear-gradient(45deg,#fff,#ff758c,#ff4e50);
+    animation:floatPhoto 4s ease-in-out infinite;
+}
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,0.6);
+}
+@keyframes floatPhoto{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+/* Heading */
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:3em;
+    margin-bottom:15px;
+    text-shadow:0 0 20px rgba(255,255,255,0.9);
+}
+/* Typewriter */
+.typewriter{
+    font-size:1.2em;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right:3px solid white;
+    width:0;
+    margin:auto;
+    animation:typing 4s steps(40,end) forwards, blink 0.7s infinite;
+}
+@keyframes typing{to{width:100%;}}
+@keyframes blink{50%{border-color:transparent;}}
+
+/* Button */
+button{
+    margin-top:30px;
+    padding:14px 35px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff4e50,#ff758c);
+    color:white;
+    font-size:1em;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 20px rgba(255,78,80,0.7);
+}
+button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 35px rgba(255,78,80,1);
+}
+
+/* Love Letter */
+.love-letter{
+    margin-top:25px;
+    font-size:1.05em;
+    line-height:1.7;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:all 0.6s ease;
+}
+.love-letter.active{
+    max-height:600px;
+    opacity:1;
+}
+
+/* Love Letter Photo */
+.letter-photo-frame{
+    width:150px;
+    height:150px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    padding:6px;
+    background:linear-gradient(45deg,#fff,#ff758c,#ff4e50);
+    animation:floatLetterPhoto 4s ease-in-out infinite;
+}
+.letter-photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,0.6);
+}
+@keyframes floatLetterPhoto{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:20px;
+    animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-110vh);opacity:0;}
+}
+
+/* Mobile */
+@media(max-width:600px){
+    h1{font-size:2.2em;}
+    .container{padding:40px 20px;}
+    .photo-frame{width:140px;height:140px;}
+    .letter-photo-frame{width:120px;height:120px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Photo -->
+    <div class="photo-frame"> 
+        <img id="valentinePhoto" src="c:\Users\Toshiba\AppData\Local\Microsoft\Windows\INetCache\IE\VSZSB397\1759038490923[1].jpg" alt="My Love">
+    </div>
+
+    <h1>Happy Valentine's Day ❤️</h1>
+
+    <div class="typewriter">
+       💖 Happy Valentine’s Day, my love! You’re my heart, my smile, and my forever. Can’t wait to make more beautiful memories with you. ❤️
+    </div>
+
+    <button id="heartBtn" onclick="toggleLetter()">Open My Heart 💌</button>
+
+    <!-- Love Letter -->
+    <div class="love-letter" id="letter">
+        <div class="letter-photo-frame">
+            <img id="letterPic" src="c:\Users\Toshiba\AppData\Local\Microsoft\Windows\INetCache\IE\AWTJY60S\1758584963927[1].jpg" alt="Our Love">
+        </div>
+        Kay ganda mo, aking sinta; kay ganda mo, aking mahal.
+    Wala akong maipintas sa taglay mong kagandahan..<br><br>
+        Awit 4:7<br><br>
+        I promise to love you more every single day. ❤️<br><br>
+        Forever yours.
+    </div>
+
+</div>
+
+<script>
+/* Toggle Love Letter */
+function toggleLetter(){
+    const letter = document.getElementById("letter");
+    const btn = document.getElementById("heartBtn");
+    letter.classList.toggle("active");
+    btn.innerHTML = letter.classList.contains("active") ? "Close My Heart 💔" : "Open My Heart 💌";
+}
+
+/* Floating Hearts */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*20+15 + "px";
+    heart.style.animationDuration = Math.random()*3+5 + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove();},8000);
+}
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>
+
